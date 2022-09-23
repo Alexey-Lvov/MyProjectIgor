@@ -1,0 +1,41 @@
+@import 'styles/variables.scss';
+@import 'styles/media.scss';
+
+.main-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 30px;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  background: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  @include mediaMinMax(1025, $normal) {
+    padding: 0 1.563vw;
+    padding-top: 80px;
+    padding-bottom: 2.604vw;
+  }
+
+  @include media($xlmini) {
+    padding: 0 20px;
+    padding-top: 80px;
+    padding-bottom: 50px;
+  }
+
+  &__content {
+    width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include mediaMinMax(1025, $normal) {
+      width: 66.667vw;
+    }
+
+    @include media($small) {
+      flex-direction: column;
+      width: fit-content;
+    }
+  }
+}

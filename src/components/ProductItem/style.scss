@@ -1,0 +1,94 @@
+@import 'styles/variables.scss';
+@import 'styles/media.scss';
+
+@keyframes vualAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:nth-child(4n + 4) {
+    margin-right: 0;
+  }
+
+  @include media($xlmini) {
+    margin-right: 0;
+  }
+  
+  &__image {
+    width: 290px;
+    height: 290px;
+    object-fit: contain;
+    background-color: white;
+    z-index: 1;
+
+    &_cursor {
+      cursor: pointer;
+    }
+  }
+
+  &__name {
+    font-size: 19px;
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    font-size: 19px;
+    color: #FF6600;
+  }
+
+  &__image-block {
+    display: flex;
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  &__vual {
+    top: 0;
+    z-index: 5;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    animation-duration: 2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation-fill-mode: forwards;
+
+    &_show {
+      animation-name: vualAnim;
+      animation-duration: 2s;
+    }
+  }
+
+  &__vual-btn {
+    border-radius: 100px;
+    width: 185px;
+    height: 60px;
+    border: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    cursor: pointer;
+  }
+}

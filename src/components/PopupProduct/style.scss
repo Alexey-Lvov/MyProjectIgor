@@ -1,0 +1,67 @@
+@import 'styles/variables.scss';
+@import 'styles/media.scss';
+
+.popup-product {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    width: 95vw;
+    max-width: 500px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__main-image {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    margin-bottom: 15px;
+  }
+
+  &__list-images {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  &__image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-right: 10px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    right: -30px;
+    top: -35px;
+    background-color: rgba(white, 0);
+    display: flex;
+    cursor: pointer;
+
+    @include media($xmini) {
+      right: 0;
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

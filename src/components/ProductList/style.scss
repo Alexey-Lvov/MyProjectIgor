@@ -1,0 +1,45 @@
+@import 'styles/variables.scss';
+@import 'styles/media.scss';
+
+.product-list {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  &__title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
+
+    @include media($xlmini) {
+      text-align: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include media($xlmini) {
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+
+  &__elipse {
+    position: absolute;
+    z-index: -1;
+
+    &_one {
+      right: -350px;
+    }
+
+    &_two {
+      left: -200px;
+      top: 100px;
+    }
+  }
+}
